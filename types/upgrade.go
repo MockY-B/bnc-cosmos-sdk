@@ -166,7 +166,7 @@ func (mgr *UpgradeManager) GetMsgTypeHeight(msgType string) int64 {
 func IsUpgradeHeight(name string) bool {
 	upgradeHeight := UpgradeMgr.GetUpgradeHeight(name)
 	if upgradeHeight == 0 {
-		return false
+		return true
 	}
 
 	return upgradeHeight == UpgradeMgr.GetHeight()
@@ -175,7 +175,7 @@ func IsUpgradeHeight(name string) bool {
 func IsUpgrade(name string) bool {
 	upgradeHeight := UpgradeMgr.GetUpgradeHeight(name)
 	if upgradeHeight == 0 {
-		return false
+		return true
 	}
 
 	return UpgradeMgr.GetHeight() >= upgradeHeight
